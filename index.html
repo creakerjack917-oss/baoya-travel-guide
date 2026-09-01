@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>苏州自由行攻略</title>
+<link rel="icon" href="data:," />
 <style>
 :root{--orange:#0f4c3f;--orange-dark:#0a3a30;--ink:#1f2937;--muted:#667085;--line:#eaecf0;--soft:#eef6f2;--blue:#eff8ff;--green:#ecfdf3;--max:1180px}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -917,6 +918,458 @@ renderIntegrated(document.querySelector('[data-integrated-day].active')?.dataset
   };
   const active=document.querySelector('[data-integrated-day].active')?.dataset.integratedDay||'d1';
   renderIntegrated(active);
+})();
+</script>
+<style id="tripcom-destination-v2">
+/* Destination guide redesign: Trip.com-inspired hierarchy, original travel content. */
+:root{
+  --jade-950:#073b31;
+  --jade-800:#0f5848;
+  --jade-600:#21806a;
+  --jade-100:#e7f2ee;
+  --paper:#ffffff;
+  --canvas:#f5f7f7;
+  --warm:#fff8ed;
+  --warm-line:#f0d7af;
+  --text:#15211e;
+  --sub:#5f6d68;
+  --hairline:#e5eae8;
+}
+body.destination-v2{background:var(--canvas);color:var(--text)}
+.destination-v2 .wrap{max-width:1220px;padding:22px 24px 56px}
+.destination-v2 .hero{
+  min-height:470px;
+  border-radius:0;
+  background-image:url('assets/suzhou-hero.jpg');
+  background-position:center;
+  box-shadow:none;
+}
+.destination-v2 .hero:after{
+  background:linear-gradient(90deg,rgba(5,24,21,.9) 0%,rgba(5,24,21,.62) 48%,rgba(5,24,21,.12) 76%),linear-gradient(0deg,rgba(4,25,21,.42),transparent 48%);
+}
+.destination-v2 .hero-copy{
+  min-height:470px;
+  max-width:none;
+  padding:48px 52px 92px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:40px;
+}
+.hero-main{max-width:660px}
+.hero-eyebrow{font-size:12px;font-weight:700;letter-spacing:0;color:#d9ebe5;margin-bottom:14px}
+.destination-v2 .hero h1{font-size:48px;line-height:1.12;letter-spacing:0;margin:0 0 14px}
+.destination-v2 .hero p{max-width:620px;font-size:15px;line-height:1.75;color:rgba(255,255,255,.9)}
+.hero-facts{display:flex;flex-wrap:wrap;gap:22px;margin-top:25px;color:#fff}
+.hero-fact{display:flex;align-items:center;gap:8px;font-size:13px}
+.hero-fact img{width:18px;height:18px;filter:brightness(0) invert(1);opacity:.94}
+.hero-overview{
+  width:284px;
+  flex:0 0 284px;
+  padding:20px 21px;
+  background:rgba(3,34,28,.78);
+  border:1px solid rgba(255,255,255,.24);
+  color:#fff;
+  backdrop-filter:blur(12px);
+}
+.hero-overview small{display:block;font-size:11px;color:#cce0da;margin-bottom:5px}
+.hero-overview strong{display:block;font-size:22px;line-height:1.35}
+.hero-route{display:grid;gap:8px;margin-top:16px;padding-top:15px;border-top:1px solid rgba(255,255,255,.18)}
+.hero-route span{font-size:12px;line-height:1.45;color:#ecf4f1}
+.destination-menu{
+  position:relative;
+  z-index:3;
+  margin:-54px 32px 0;
+  min-height:108px;
+  padding:20px 26px 17px;
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:8px;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 14px 36px rgba(21,45,38,.13);
+}
+.destination-menu a{display:grid;justify-items:center;align-content:center;gap:9px;min-width:0;color:#34443f;font-size:13px;font-weight:650}
+.destination-menu a:hover{color:var(--jade-800)}
+.destination-menu .menu-icon{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#f3f7f6;transition:.2s}
+.destination-menu a:hover .menu-icon{transform:translateY(-2px);background:var(--jade-100)}
+.destination-menu img{width:22px;height:22px;filter:invert(27%) sepia(29%) saturate(1044%) hue-rotate(112deg) brightness(91%)}
+.trip-status-strip{
+  margin:28px 0 44px;
+  display:grid;
+  grid-template-columns:1.25fr 1fr 1fr;
+  background:#fff;
+  border:1px solid var(--hairline);
+  border-left:3px solid var(--jade-800);
+}
+.trip-status-item{padding:16px 20px;display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:center;min-width:0}
+.trip-status-item+ .trip-status-item{border-left:1px solid var(--hairline)}
+.trip-status-item img{width:20px;height:20px;opacity:.75}
+.trip-status-item b{display:block;font-size:13px;margin-bottom:2px}
+.trip-status-item span{display:block;font-size:11px;color:var(--sub);overflow-wrap:anywhere}
+.destination-v2 .section{padding:40px 0}
+.destination-v2 #plan{padding-top:0}
+.destination-v2 #sight-alt,.destination-v2 #food-alt{border-top:1px solid var(--hairline)}
+.guide-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:18px}
+.guide-heading .heading-kicker{font-size:11px;font-weight:800;color:var(--jade-600)}
+.guide-heading h2,.destination-v2 .section-title h2{font-size:30px;line-height:1.25;letter-spacing:0;color:var(--text)}
+.guide-heading p,.destination-v2 .section-title p{font-size:12px;color:var(--sub);margin-top:5px}
+.guide-heading-meta{font-size:12px;color:var(--jade-800);border-bottom:1px solid #9abbb1;padding-bottom:3px;white-space:nowrap}
+.destination-v2 .integrated-tabs{
+  position:sticky;
+  top:0;
+  z-index:20;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:0;
+  overflow:visible;
+  background:#fff;
+  border:1px solid var(--hairline);
+  box-shadow:0 5px 16px rgba(18,42,35,.06);
+}
+.destination-v2 .integrated-tabs button{
+  position:relative;
+  min-height:64px;
+  padding:11px 8px 10px;
+  border:0;
+  border-right:1px solid var(--hairline);
+  color:#65726e;
+  font-size:13px;
+  line-height:1.35;
+  background:#fff;
+}
+.destination-v2 .integrated-tabs button:last-child{border-right:0}
+.destination-v2 .integrated-tabs button:after{content:"";position:absolute;left:18%;right:18%;bottom:-1px;height:3px;background:transparent}
+.destination-v2 .integrated-tabs button.active{color:var(--jade-950);font-weight:800;background:#f9fbfa}
+.destination-v2 .integrated-tabs button.active:after{background:var(--jade-600)}
+.destination-v2 .integrated-list{margin-top:22px}
+.day-overview{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:19px 22px;background:var(--jade-950);color:#fff}
+.day-overview small{display:block;font-size:11px;color:#b9d1ca;margin-bottom:3px}
+.day-overview h3{font-size:20px;line-height:1.4;letter-spacing:0}
+.day-state{font-size:12px;color:#e8f2ef;padding-bottom:2px;border-bottom:1px solid rgba(255,255,255,.45);white-space:nowrap}
+.day-items{position:relative;display:grid;gap:12px;padding:20px 0 0}
+.day-items:before{content:"";position:absolute;left:26px;top:20px;bottom:0;width:1px;background:#d9e3df}
+.destination-v2 .integrated-card{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 310px;
+  min-height:190px;
+  margin-left:54px;
+  overflow:hidden;
+  border:1px solid var(--hairline);
+  border-radius:0;
+  background:#fff;
+  box-shadow:none;
+  transition:border-color .18s,box-shadow .18s;
+}
+.destination-v2 .integrated-card:hover{border-color:#c7d4d0;box-shadow:0 9px 24px rgba(27,50,43,.07)}
+.destination-v2 .integrated-card:before{
+  content:"";
+  position:absolute;
+  left:-38px;
+  top:22px;
+  width:13px;
+  height:13px;
+  border:4px solid var(--canvas);
+  border-radius:50%;
+  background:var(--jade-600);
+  box-shadow:0 0 0 1px #b5ccc4;
+}
+.destination-v2 .integrated-copy{
+  padding:24px 26px 23px;
+  display:grid;
+  grid-template-columns:110px minmax(0,1fr);
+  gap:20px;
+  align-content:start;
+  background:#fff!important;
+}
+.destination-v2 .integrated-copy time{display:block;color:var(--jade-800);font-size:12px;font-weight:800;line-height:1.55;letter-spacing:0;text-decoration:none}
+.destination-v2 .integrated-copy time span{display:block}
+.destination-v2 .integrated-copy h3{font-size:18px;line-height:1.45;letter-spacing:0;margin:0 0 9px;color:#17231f!important}
+.destination-v2 .integrated-copy p{font-size:12.5px;line-height:1.72;color:var(--sub)}
+.entry-kind{display:flex;align-items:center;gap:7px;margin-bottom:8px;color:#7a8783;font-size:10px;font-weight:700}
+.entry-kind img{width:14px;height:14px;opacity:.72}
+.destination-v2 .integrated-media{min-height:190px;background:#e9efed}
+.destination-v2 .integrated-media img{width:100%;height:100%;min-height:190px;object-fit:cover;transition:transform .35s}
+.destination-v2 .integrated-card:hover .integrated-media img{transform:scale(1.018)}
+.destination-v2 .integrated-card.food-card{border-left:1px solid var(--warm-line)}
+.destination-v2 .integrated-card.food-card:before{background:#d89332}
+.destination-v2 .integrated-card.food-card .entry-kind{color:#9a6825}
+.destination-v2 .integrated-card.food-card .integrated-copy{background:var(--warm)!important}
+.destination-v2 .section-title{display:block;margin-bottom:21px}
+.destination-v2 .section-title:before{content:"";display:block;width:28px;height:2px;margin-bottom:9px;background:var(--jade-600)}
+.destination-v2 #sight-alt .section-title h2,.destination-v2 #food-alt .section-title h2{font-size:28px}
+.destination-v2 .sight-alt-intro{max-width:720px;margin:-10px 0 20px;font-size:12px;line-height:1.7;color:var(--sub)}
+.sight-day-tabs{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border:1px solid var(--hairline);box-shadow:0 5px 16px rgba(18,42,35,.06)}
+.sight-day-tabs button{position:relative;min-height:62px;padding:11px 10px;border:0;border-right:1px solid var(--hairline);background:#fff;color:#65726e;font-size:13px;line-height:1.35}
+.sight-day-tabs button:last-child{border-right:0}
+.sight-day-tabs button:after{content:"";position:absolute;left:18%;right:18%;bottom:-1px;height:3px;background:transparent}
+.sight-day-tabs button.active{color:var(--jade-950);font-weight:800;background:#f9fbfa}
+.sight-day-tabs button.active:after{background:var(--jade-600)}
+.sight-day-overview{margin-top:18px}
+.destination-v2 .sight-alt-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.destination-v2 .sight-alt-grid[data-count="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+.destination-v2 .sight-alt-grid[data-count="1"]{grid-template-columns:minmax(0,380px)}
+.destination-v2 .sight-day-overview+ .sight-alt-grid{margin-top:18px}
+.destination-v2 .sight-option{border:1px solid var(--hairline);border-radius:0;transition:.18s}
+.destination-v2 .sight-option:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(27,50,43,.08)}
+.destination-v2 .sight-option img{height:auto;aspect-ratio:5/3}
+.destination-v2 .sight-option-body{padding:17px 18px 19px}
+.destination-v2 .sight-option-day{color:var(--jade-600);font-size:11px;margin-bottom:5px}
+.destination-v2 .sight-option-body h3{font-size:18px;color:var(--text)}
+.destination-v2 .sight-option-address{min-height:0;font-size:11px}
+.destination-v2 .sight-option-note{font-size:11.5px;line-height:1.65}
+.destination-v2 .food-alt-tabs{gap:24px;margin:0 0 20px;border-bottom:1px solid var(--hairline)}
+.destination-v2 .food-alt-tabs button{padding:9px 2px 10px;color:#6d7975;border-bottom-width:2px}
+.destination-v2 .food-alt-tabs button.active{color:var(--jade-950);border-bottom-color:var(--jade-600)}
+.destination-v2 .food-alt-panel.active{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.destination-v2 .food-option{border:0;border-radius:0;background:transparent}
+.destination-v2 .food-option img{height:auto;aspect-ratio:4/3;border-radius:0}
+.destination-v2 .food-option-body{padding:11px 1px 4px}
+.destination-v2 .food-option-body h3{font-size:15px}
+.destination-v2 .food-address{min-height:34px;font-size:10.5px}
+.destination-v2 .food-meta{gap:9px;margin-top:7px}
+.destination-v2 .food-meta span{padding:0;background:none;color:#70807a;font-size:10px}
+.destination-v2 .food-meta span+span:before{content:"·";margin-right:9px;color:#a9b2af}
+.destination-footer{margin-top:20px;padding:24px 0 8px;border-top:1px solid var(--hairline);display:flex;justify-content:space-between;gap:20px;color:#84908c;font-size:11px}
+@media(max-width:900px){
+  .destination-v2 .hero-copy{padding:42px 36px 86px}
+  .hero-overview{width:250px;flex-basis:250px}
+  .destination-menu{margin-left:18px;margin-right:18px;padding-left:14px;padding-right:14px}
+  .destination-v2 .integrated-card{grid-template-columns:minmax(0,1fr) 240px}
+  .destination-v2 .integrated-copy{grid-template-columns:92px minmax(0,1fr);padding:21px 22px}
+  .destination-v2 .sight-alt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:680px){
+  .destination-v2 .wrap{padding:0 0 38px}
+  .destination-v2 .hero{min-height:465px}
+  .destination-v2 .hero-copy{min-height:465px;padding:38px 22px 92px;display:block}
+  .destination-v2 .hero h1{font-size:34px;margin-bottom:12px}
+  .destination-v2 .hero p{font-size:13px;line-height:1.65}
+  .hero-facts{gap:12px 18px;margin-top:18px}
+  .hero-fact{font-size:12px}
+  .hero-overview{width:100%;margin-top:26px;padding:15px 16px;background:rgba(3,34,28,.66)}
+  .hero-overview strong{font-size:17px}
+  .hero-route{display:none}
+  .destination-menu{margin:-51px 12px 0;padding:15px 8px 13px;grid-template-columns:repeat(6,76px);overflow-x:auto;justify-content:start;box-shadow:0 10px 28px rgba(21,45,38,.12);scrollbar-width:none}
+  .destination-menu::-webkit-scrollbar{display:none}
+  .destination-menu .menu-icon{width:38px;height:38px}
+  .destination-menu img{width:19px;height:19px}
+  .destination-menu a{font-size:11px}
+  .trip-status-strip{margin:20px 12px 32px;grid-template-columns:1fr;border-left-width:3px}
+  .trip-status-item{padding:13px 15px}
+  .trip-status-item+ .trip-status-item{border-left:0;border-top:1px solid var(--hairline)}
+  .destination-v2 .section{padding:32px 12px}
+  .destination-v2 #plan{padding-top:0}
+  .guide-heading{display:block;margin-bottom:15px}
+  .guide-heading h2,.destination-v2 .section-title h2{font-size:25px}
+  .guide-heading-meta{display:inline-block;margin-top:9px;white-space:normal}
+  .destination-v2 .integrated-tabs{margin:0 -12px;grid-template-columns:repeat(5,112px);overflow-x:auto;box-shadow:0 4px 14px rgba(18,42,35,.08);scrollbar-width:none}
+  .destination-v2 .integrated-tabs::-webkit-scrollbar{display:none}
+  .destination-v2 .integrated-tabs button{min-height:58px;font-size:12px}
+  .day-overview{display:block;padding:16px 17px}
+  .day-overview h3{font-size:17px}
+  .day-state{display:inline-block;margin-top:8px;font-size:11px}
+  .day-items{gap:12px;padding-top:12px}
+  .day-items:before{display:none}
+  .destination-v2 .integrated-card{grid-template-columns:1fr;margin-left:0;min-height:0}
+  .destination-v2 .integrated-card:before{display:none}
+  .destination-v2 .integrated-media{order:-1;min-height:0;aspect-ratio:16/9}
+  .destination-v2 .integrated-media img{min-height:0;height:100%}
+  .destination-v2 .integrated-copy{grid-template-columns:1fr;gap:6px;padding:16px 16px 18px}
+  .destination-v2 .integrated-copy time{font-size:11.5px}
+  .destination-v2 .integrated-copy h3{font-size:16px;margin-bottom:7px}
+  .destination-v2 .integrated-copy p{font-size:12px;line-height:1.7}
+  .entry-kind{position:absolute;top:12px;left:12px;z-index:2;margin:0;padding:5px 8px;background:rgba(255,255,255,.92);color:#52625d!important}
+  .destination-v2 .sight-alt-grid{grid-template-columns:1fr;gap:14px}
+  .destination-v2 .sight-alt-grid[data-count="2"],.destination-v2 .sight-alt-grid[data-count="1"]{grid-template-columns:1fr}
+  .sight-day-tabs{grid-template-columns:repeat(3,122px);margin:0 -12px;overflow-x:auto;scrollbar-width:none}
+  .sight-day-tabs::-webkit-scrollbar{display:none}
+  .sight-day-tabs button{min-height:58px;padding:9px 7px;font-size:11.5px}
+  .sight-day-overview{margin-top:12px}
+  .destination-v2 .food-alt-panel.active{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .destination-v2 .food-option-body h3{font-size:13.5px}
+  .destination-footer{margin:8px 12px 0;display:block;line-height:1.7}
+}
+</style>
+<script>
+(function buildDestinationGuide(){
+  document.body.classList.add('destination-v2');
+
+  const iconPath=name=>`assets/icons/${name}.svg`;
+  const hero=document.querySelector('.hero');
+  hero.innerHTML=`<div class="hero-copy">
+    <div class="hero-main">
+      <div class="hero-eyebrow">2026 · 苏州自由行</div>
+      <h1>苏州自由行旅游攻略</h1>
+      <p>拙政园、苏州博物馆、平江路、耦园、留园、艺圃、山塘街、十全街、盘门与网师园。</p>
+      <div class="hero-facts">
+        <span class="hero-fact"><img src="${iconPath('calendar-days')}" alt="">4晚5天</span>
+        <span class="hero-fact"><img src="${iconPath('bed-double')}" alt="">桔子水晶观前街店</span>
+        <span class="hero-fact"><img src="${iconPath('map-pin')}" alt="">每天一个区域</span>
+      </div>
+    </div>
+    <aside class="hero-overview" aria-label="行程概览">
+      <small>2026.08.31—09.04</small>
+      <strong>从广州出发，住进姑苏古城</strong>
+      <div class="hero-route">
+        <span>上海浦东落地 · 高铁进苏州</span>
+        <span>园林与古巷 · 写真留出整天</span>
+        <span>上海虹桥夜航返回广州</span>
+      </div>
+    </aside>
+  </div>`;
+
+  const menu=document.createElement('nav');
+  menu.className='destination-menu';
+  menu.setAttribute('aria-label','旅行攻略导航');
+  const menuItems=[
+    ['calendar-days','每日行程','#plan'],
+    ['bed-double','酒店住宿','#trip-status'],
+    ['compass','景点备选','#sight-alt'],
+    ['utensils','餐饮备选','#food-alt'],
+    ['ship','水上路线','#sight-alt'],
+    ['train-front','交通返程','#plan']
+  ];
+  menu.innerHTML=menuItems.map(([icon,label,href])=>`<a href="${href}"><span class="menu-icon"><img src="${iconPath(icon)}" alt=""></span><span>${label}</span></a>`).join('');
+  hero.after(menu);
+
+  const status=document.createElement('section');
+  status.id='trip-status';
+  status.className='trip-status-strip';
+  status.innerHTML=`
+    <div class="trip-status-item"><img src="${iconPath('bed-double')}" alt=""><div><b>住宿已定</b><span>苏州观前街桔子水晶酒店 · 乐桥站附近</span></div></div>
+    <div class="trip-status-item"><img src="${iconPath('camera')}" alt=""><div><b>写真已约</b><span>09.01 两处写真 · 整日不加景点</span></div></div>
+    <div class="trip-status-item"><img src="${iconPath('plane')}" alt=""><div><b>往返航班</b><span>AQ1011 抵沪 · 9C8929 虹桥返穗</span></div></div>`;
+  menu.after(status);
+
+  const tabs=document.querySelector('.integrated-tabs');
+  const heading=document.createElement('div');
+  heading.className='guide-heading';
+  heading.innerHTML=`<div><div class="heading-kicker">08.31—09.04</div><h2>5日行程安排</h2><p>交通、景点和吃饭都按实际发生的顺序放在一起。</p></div><span class="guide-heading-meta">2位旅客 · 最早 09:00 开始游览</span>`;
+  tabs.before(heading);
+
+  const sightAlt=document.querySelector('#sight-alt');
+  const foodAlt=document.querySelector('#food-alt');
+  if(sightAlt&&foodAlt&&foodAlt.previousElementSibling!==sightAlt){
+    foodAlt.before(sightAlt);
+  }
+
+  const kindOf=row=>{
+    if(/午餐|晚餐|下午茶|外卖|随手吃|轻食|桂花糕|齐云楼/.test(row.title)) return ['meal','utensils','吃喝'];
+    if(/航空|机场|高铁|车站|上海虹桥|回家|市域线|地铁/.test(row.title)) return ['transit',/航空|机场|回家/.test(row.title)?'plane':'train-front','交通'];
+    if(/写真/.test(row.title)) return ['photo','camera','写真'];
+    if(/船/.test(row.title)) return ['boat','ship','水上'];
+    return ['place','map-pin','游览'];
+  };
+  const formatTime=value=>value.split(' · ').map(part=>`<span>${part}</span>`).join('');
+
+  renderIntegrated=function(key){
+    const plan=integratedPlans[key];
+    const cards=plan.rows.map(row=>{
+      const [kind,icon,label]=kindOf(row);
+      const mediaSrc=(row.images&&row.images[0])||row.image;
+      const media=mediaSrc
+        ? `<img src="${mediaSrc}" alt="${row.title}" loading="lazy" onerror="this.closest('.integrated-media').innerHTML='<div class=\'media-missing\'><div><strong>图片加载失败</strong><span>稍后刷新重试</span></div></div>'">`
+        : `<div class="media-missing"><div><strong>暂无图片</strong></div></div>`;
+      return `<article class="integrated-card ${kind==='meal'?'food-card':''} ${row.transport?'transport-card':''}" data-kind="${kind}">
+        <div class="integrated-copy">
+          <time>${formatTime(row.time)}</time>
+          <div><div class="entry-kind"><img src="${iconPath(icon)}" alt=""><span>${label}</span></div><h3>${row.title}</h3><p>${row.desc}</p></div>
+        </div>
+        <div class="integrated-media">${media}</div>
+      </article>`;
+    }).join('');
+    list.innerHTML=`<div class="day-overview"><div><small>今日路线</small><h3>${plan.title}</h3></div><span class="day-state">${plan.state}</span></div><div class="day-items">${cards}</div>`;
+  };
+
+  document.querySelectorAll('[data-integrated-day]').forEach(button=>{
+    button.onclick=()=>{
+      document.querySelectorAll('[data-integrated-day]').forEach(item=>item.classList.toggle('active',item===button));
+      renderIntegrated(button.dataset.integratedDay);
+      button.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+      if(window.innerWidth<681) document.querySelector('#plan').scrollIntoView({behavior:'smooth',block:'start'});
+    };
+  });
+
+  const findRow=(day,title)=>integratedPlans[day].rows.find(row=>row.title===title);
+  const airportLink=findRow('d1','浦东机场 T2 → 虹桥机场 T2｜机场市域线');
+  if(airportLink) airportLink.image='assets/suzhou-metro-route.jpg';
+  const ouyuan=findRow('d3','平江路支巷 → 耦园');
+  if(ouyuan){
+    ouyuan.desc='耦园放在当天最后。出发前在<u>苏州园林官方购票页</u>确认最晚入园时间；能进再去，不能进就继续逛支巷、找茶馆，或者回酒店休息。';
+    ouyuan.image='assets/tripcom/couple-garden.webp';
+  }
+  const zhuozheng=findRow('d3','酒店 → 拙政园');
+  if(zhuozheng) zhuozheng.image='assets/tripcom/zhuozheng-880.jpg';
+  const lingering=findRow('d4','西园寺 → 留园');
+  if(lingering) lingering.image='assets/tripcom/lingering-garden.webp';
+  const shantang=findRow('d4','艺圃 → 山塘街看亮灯');
+  if(shantang) shantang.image='assets/tripcom/shantang.webp';
+  const artGarden=findRow('d4','下午茶｜艺圃临水茶室');
+  if(artGarden) artGarden.desc='14:30离开留园，打车约1.3公里、8至12分钟到艺圃。艺圃可现场购票；坐45至60分钟喝茶，让这段行程真正慢下来。<span class="tea-gift-note">买茶叶送礼｜碧螺春、三万昌等</span>';
+  const stationRide=findRow('d5','网师园 → 苏州站');
+  if(stationRide) stationRide.image='assets/suzhou-station.png';
+  const returnTrain=findRow('d5','苏州站 → 上海虹桥站｜D2211');
+  if(returnTrain) returnTrain.desc=returnTrain.desc.replace(/；车次和余票以12306当天为准。?/g,'。');
+
+  const active=document.querySelector('[data-integrated-day].active')?.dataset.integratedDay||'d1';
+  renderIntegrated(active);
+
+  const duplicateJinji=[...document.querySelectorAll('#sight-alt .sight-option')]
+    .find(card=>card.querySelector('h3')?.textContent.trim()==='金鸡湖景区');
+  if(duplicateJinji) duplicateJinji.remove();
+  const optionNotes={
+    '虎丘山风景区':'如果改走虎丘线，可从李鸿章码头坐到山塘街白居易码头，约20分钟，现场公示最晚一班约17:30。需替换西园寺或艺圃其中一处，不和原主线全叠加。',
+    '寒山寺':'从枫桥路看运河、碑廊和寺院，可现场购票。雨大时保留室内和廊下，不再把山塘街全程走完。',
+    '金鸡湖水上巴士':'免费约15分钟，在码头机器刷身份证取票，先到先得。只在晴天把金鸡湖和东方之门作为东线替代，不与古城东北主线叠加。',
+    '虎丘李鸿章码头 → 山塘白居易码头':'约20分钟，现场公示最晚一班约17:30。若选这条线，要把虎丘换进9月3日，并替换西园寺或艺圃其中一处。',
+    '相门 → 盘门 → 胥门水上巴士':'相门方向参考班次为09:00、11:00、13:00、15:00。酒店出发先乘地铁1号线到相门，再步行到码头；与十全街二选一，船班和停靠以当天安排为准。'
+  };
+  document.querySelectorAll('#sight-alt .sight-option').forEach(card=>{
+    const title=card.querySelector('h3')?.textContent.trim();
+    const note=card.querySelector('.sight-option-note');
+    if(note&&optionNotes[title]) note.textContent=optionNotes[title];
+    if(title==='寒山寺') card.querySelector('img').src='assets/tripcom/hanshan.webp';
+  });
+
+  const sightGrid=document.querySelector('#sight-alt .sight-alt-grid');
+  const sightCards=[...sightGrid.querySelectorAll('.sight-option')];
+  const sightDays={
+    sep02:{tab:'09.02 · 古城东北',title:'古城东北 · 金鸡湖东线',state:'替换耦园或部分平江路',cards:[]},
+    sep03:{tab:'09.03 · 古城西部',title:'古城西部 · 虎丘与寒山寺',state:'当天最多替换1处',cards:[]},
+    sep04:{tab:'09.04 · 返程日',title:'返程日 · 相门水上路线',state:'与十全街二选一',cards:[]}
+  };
+  sightCards.forEach(card=>{
+    const dayText=card.querySelector('.sight-option-day')?.textContent.trim()||'';
+    const key=dayText.startsWith('09.02')?'sep02':dayText.startsWith('09.04')?'sep04':'sep03';
+    sightDays[key].cards.push(card);
+    const dayLine=card.querySelector('.sight-option-day');
+    if(dayLine) dayLine.textContent=dayText.replace(/^09\.\d{2}\s*·\s*/, '');
+  });
+  const sightTabs=document.createElement('div');
+  sightTabs.className='sight-day-tabs';
+  sightTabs.setAttribute('role','tablist');
+  sightTabs.innerHTML=Object.entries(sightDays).map(([key,day],index)=>`<button class="${index===0?'active':''}" data-sight-day="${key}" role="tab">${day.tab}</button>`).join('');
+  const sightOverview=document.createElement('div');
+  sightOverview.className='day-overview sight-day-overview';
+  const sightIntro=document.querySelector('#sight-alt .sight-alt-intro');
+  if(sightIntro) sightIntro.textContent='先选日期，再从当天所在区域里挑一个替换；备选不与主线全部叠加。';
+  sightGrid.before(sightTabs,sightOverview);
+  const renderSightDay=key=>{
+    const day=sightDays[key];
+    sightOverview.innerHTML=`<div><small>当天备选</small><h3>${day.title}</h3></div><span class="day-state">${day.state}</span>`;
+    sightGrid.replaceChildren(...day.cards);
+    sightGrid.dataset.count=String(day.cards.length);
+    sightTabs.querySelectorAll('button').forEach(button=>button.classList.toggle('active',button.dataset.sightDay===key));
+  };
+  sightTabs.querySelectorAll('button').forEach(button=>button.addEventListener('click',()=>renderSightDay(button.dataset.sightDay)));
+  renderSightDay('sep02');
+
+  const footer=document.createElement('footer');
+  footer.className='destination-footer';
+  footer.innerHTML='<span>苏州自由行攻略 · 2026.08.31—09.04</span><span>景区开放、天气与交通以出发当天信息为准</span>';
+  document.querySelector('main').append(footer);
 })();
 </script>
 </body>
